@@ -8,7 +8,7 @@ public class Product implements Serializable {
     private String id;
     private String name;
     private String categoryId;
-    private double salePrice;
+    private double sellPrice;
     private double importPrice;
     private int stock;
     private String unit;
@@ -16,22 +16,22 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(String id, String name, String categoryId, double salePrice, double importPrice, int stock, String unit) {
+    public Product(String id, String name, String categoryId, double sellPrice, double importPrice, int stock, String unit) {
         this.id = id;
         this.name = name;
         this.categoryId = categoryId;
-        this.salePrice = salePrice;
+        this.sellPrice = sellPrice;
         this.importPrice = importPrice;
         this.stock = stock;
         this.unit = unit;
     }
 
     // Auto generate id constructor
-    public Product(String name, String categoryId, double salePrice, double importPrice, int stock, String unit) {
+    public Product(String name, String categoryId, double sellPrice, double importPrice, int stock, String unit) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.categoryId = categoryId;
-        this.salePrice = salePrice;
+        this.sellPrice = sellPrice;
         this.importPrice = importPrice;
         this.stock = stock;
         this.unit = unit;
@@ -46,8 +46,8 @@ public class Product implements Serializable {
     public String getCategoryId() { return categoryId; }
     public void setCategoryId(String categoryId) { this.categoryId = categoryId; }
 
-    public double getSalePrice() { return salePrice; }
-    public void setSalePrice(double salePrice) { this.salePrice = salePrice; }
+    public double getSellPrice() { return sellPrice; }
+    public void setSellPrice(double sellPrice) { this.sellPrice = sellPrice; }
 
     public double getImportPrice() { return importPrice; }
     public void setImportPrice(double importPrice) { this.importPrice = importPrice; }
