@@ -26,6 +26,7 @@ public class ProductRepository {
         return instance;
     }
 
+    @SuppressWarnings("unchecked")
     public Result<List<Product>> getProducts() {
         try {
             return new Result.Success<>(dataSource.getProducts());
@@ -34,6 +35,7 @@ public class ProductRepository {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public Result<Boolean> addProduct(Product product) {
         try {
             boolean success = dataSource.addProduct(product);

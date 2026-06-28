@@ -27,6 +27,7 @@ public class ProductViewModel extends ViewModel {
         listResult.setValue(repository.getProducts());
     }
 
+    @SuppressWarnings("unchecked")
     public void addProduct(String name, String catId, String sellPriceStr, String importPriceStr, String stockStr, String unit) {
         // Logic Validate dữ liệu thô đầu vào
         if (name == null || name.trim().isEmpty()) {
