@@ -1,0 +1,109 @@
+<resources>
+
+    <style name="TextAppearance.RetailMS" parent="TextAppearance.Material3.BodyMedium" />
+
+    <style name="Widget.RetailMS" parent="android:Widget" />
+
+    <style name="Widget.RetailMS.Button" parent="Widget.Material3.Button" />
+
+    <!-- App Title -->
+    <style name="TextAppearance.RetailMS.AppTitle">
+
+        <item name="android:textSize">@dimen/text_app_title</item>
+
+        <item name="android:textStyle">bold</item>
+
+        <item name="android:textColor">@color/text_primary</item>
+
+    </style>
+
+    <!-- Section Title -->
+    <style name="TextAppearance.RetailMS.SectionTitle">
+
+        <item name="android:textSize">@dimen/text_section_title</item>
+
+        <item name="android:textStyle">bold</item>
+
+        <item name="android:textColor">@color/text_primary</item>
+
+    </style>
+
+    <!-- Body -->
+    <style name="TextAppearance.RetailMS.Body">
+
+        <item name="android:textSize">@dimen/text_body</item>
+
+        <item name="android:textColor">@color/text_primary</item>
+
+    </style>
+
+    <!-- Secondary -->
+    <style name="TextAppearance.RetailMS.Secondary">
+
+        <item name="android:textSize">@dimen/text_secondary</item>
+
+        <item name="android:textColor">@color/text_secondary</item>
+
+    </style>
+
+    <!-- Caption -->
+    <style name="TextAppearance.RetailMS.Caption">
+
+        <item name="android:textSize">@dimen/text_caption</item>
+
+        <item name="android:textColor">@color/text_hint</item>
+
+    </style>
+
+    <style name="TextAppearance.RetailMS.InputLabel">
+
+        <item name="android:textSize">@dimen/text_secondary</item>
+
+        <item name="android:textStyle">bold</item>
+
+        <item name="android:textColor">@color/text_primary</item>
+
+    </style>
+
+    <!-- Primary Button -->
+    <style name="Widget.RetailMS.Button.Primary"
+        parent="Widget.Material3.Button">
+
+        <item name="android:textColor">@color/white</item>
+
+        <item name="backgroundTint">@color/primary_green</item>
+
+        <item name="cornerRadius">@dimen/radius_md</item>
+
+        <item name="android:minHeight">@dimen/button_height</item>
+
+    </style>
+
+    <!-- Secondary Button -->
+    <style name="Widget.RetailMS.Button.Secondary"
+        parent="Widget.Material3.Button.OutlinedButton">
+
+        <item name="android:textColor">@color/primary_green</item>
+
+        <item name="strokeColor">@color/primary_green</item>
+
+        <item name="strokeWidth">1dp</item>
+
+        <item name="cornerRadius">@dimen/radius_md</item>
+
+        <item name="backgroundTint">@color/white</item>
+
+    </style>
+
+    <!-- Product Card -->
+    <style name="Widget.RetailMS.Card">
+
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+
+        <item name="cardElevation">@dimen/elevation_card</item>
+
+        <item name="cardBackgroundColor">@color/surface_white</item>
+
+    </style>
+
+</resources>

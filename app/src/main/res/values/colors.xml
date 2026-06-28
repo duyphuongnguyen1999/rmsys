@@ -1,0 +1,45 @@
+<resources>
+<!--    Common  -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+<!--    Primary -->
+    <!-- Emerald Green
+            - toolbar
+            - main button
+            - FAB
+            - active state
+    -->
+    <color name="primary_green">#1F7A34</color>
+    <!-- Dark Green
+            - pressed state
+            - status bar
+            - dark card
+    -->
+    <color name="dark_green">#1F7A34</color>
+    <!-- Light Green
+            - highlight
+            - chip
+            - secondary action
+    -->
+    <color name="light_green">#65D17B</color>
+
+<!--    Background  -->
+    <color name="background">#F5F7F5</color>
+    <color name="surface_white">#FFFFFF</color>
+    <color name="background_upload_image">#FFFFFF</color>
+
+<!--    Border  -->
+    <color name="border_gray">#D8D8D8</color>
+
+<!--    Text  -->
+    <color name="text_primary">#1C1C1C</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#999999</color>
+
+<!--    Accent  -->
+    <color name="success_green">#28C76F</color>
+    <color name="warning_orange">#FF9F43</color>
+    <color name="error_red">#EA5455</color>
+
+</resources>

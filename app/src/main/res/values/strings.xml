@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Retail Management System</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="password_hint">Password</string>
+    <string name="username_hint">Username</string>
+    <string name="application_name">RetailMS</string>
+    <string name="application_sub_title">Quản lý bán hàng dễ dàng</string>
+    <string name="loading_str">Loading...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_image_src">Chọn ảnh sản phẩm</string>
+    <string name="button_login_txt">ĐĂNG NHẬP</string>
+</resources>
