@@ -1,5 +1,7 @@
 package com.duyphn.rmsys.model;
 
+import androidx.annotation.NonNull;
+
 /**
  * A generic class that holds a result success w/ data or an error exception.
  */
@@ -8,10 +10,11 @@ public class Result<T> {
     private Result() {
     }
 
+    @NonNull
     @Override
     public String toString() {
         if (this instanceof Result.Success) {
-            Result.Success success = (Result.Success) this;
+            Result.Success<T> success = (Result.Success<T>) this;
             return "Success[data=" + success.getData().toString() + "]";
         } else if (this instanceof Result.Error) {
             Result.Error error = (Result.Error) this;
@@ -21,7 +24,7 @@ public class Result<T> {
     }
 
     // Success sub-class
-    public final static class Success<T> extends Result {
+    public final static class Success<T> extends Result<T> {
         private final T data;
 
         public Success(T data) {
