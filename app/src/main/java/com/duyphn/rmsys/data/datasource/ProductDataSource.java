@@ -10,7 +10,7 @@ public class ProductDataSource {
     public List<Product> getProducts() throws Exception {
         // TODO: Viết code đọc SQLite hoặc gọi API thực tế ở đây
         List<Product> mockList = new ArrayList<>();
-        mockList.add(new Product("Sữa tươi", "cat1", 15000, 10000, 50, "Hộp"));
+        mockList.add(new Product("Sữa tươi", "cat1", 15000, 10000, 50, "Hộp", 1));
         return mockList;
     }
 

@@ -8,33 +8,37 @@ public class Product implements Serializable {
     private String id;
     private String name;
     private String categoryId;
-    private double sellPrice;
+    private double sellingPrice;
     private double importPrice;
     private int stock;
     private String unit;
 
+    private int imageResId;
+
     public Product() {
     }
 
-    public Product(String id, String name, String categoryId, double sellPrice, double importPrice, int stock, String unit) {
+    public Product(String id, String name, String categoryId, double sellingPrice, double importPrice, int stock, String unit, int imageResId) {
         this.id = id;
         this.name = name;
         this.categoryId = categoryId;
-        this.sellPrice = sellPrice;
+        this.sellingPrice = sellingPrice;
         this.importPrice = importPrice;
         this.stock = stock;
         this.unit = unit;
+        this.imageResId = imageResId;
     }
 
     // Auto generate id constructor
-    public Product(String name, String categoryId, double sellPrice, double importPrice, int stock, String unit) {
+    public Product(String name, String categoryId, double sellingPrice, double importPrice, int stock, String unit, int imageResId) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.categoryId = categoryId;
-        this.sellPrice = sellPrice;
+        this.sellingPrice = sellingPrice;
         this.importPrice = importPrice;
         this.stock = stock;
         this.unit = unit;
+        this.imageResId = imageResId;
     }
 
     public String getId() { return id; }
@@ -46,8 +50,8 @@ public class Product implements Serializable {
     public String getCategoryId() { return categoryId; }
     public void setCategoryId(String categoryId) { this.categoryId = categoryId; }
 
-    public double getSellPrice() { return sellPrice; }
-    public void setSellPrice(double sellPrice) { this.sellPrice = sellPrice; }
+    public double getSellingPrice() { return sellingPrice; }
+    public void setSellingPrice(double sellingPrice) { this.sellingPrice = sellingPrice; }
 
     public double getImportPrice() { return importPrice; }
     public void setImportPrice(double importPrice) { this.importPrice = importPrice; }
@@ -57,4 +61,8 @@ public class Product implements Serializable {
 
     public String getUnit() { return unit; }
     public void setUnit(String unit) { this.unit = unit; }
+
+    public int getImageResId() { return imageResId; }
+
+    public void setImageResId(int imageResId) { this.imageResId = imageResId; }
 }

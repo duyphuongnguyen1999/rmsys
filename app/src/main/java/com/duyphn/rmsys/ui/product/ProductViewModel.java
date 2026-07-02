@@ -28,23 +28,25 @@ public class ProductViewModel extends ViewModel {
     }
 
     @SuppressWarnings("unchecked")
-    public void addProduct(String name, String catId, String sellPriceStr, String importPriceStr, String stockStr, String unit) {
+    public void addProduct(
+            String name, String catId, String sellingPriceStr, String importPriceStr,
+            String stockStr, String unit, int imageResId) {
         // Logic Validate dữ liệu thô đầu vào
         if (name == null || name.trim().isEmpty()) {
             addResult.setValue(new Result.Error(new Exception("Tên sản phẩm không được để trống")));
             return;
         }
-        if (sellPriceStr == null || sellPriceStr.trim().isEmpty()) {
+        if (sellingPriceStr == null || sellingPriceStr.trim().isEmpty()) {
             addResult.setValue(new Result.Error(new Exception("Vui lòng nhập giá bán")));
             return;
         }
 
         try {
-            double sellPrice = Double.parseDouble(sellPriceStr);
+            double sellPrice = Double.parseDouble(sellingPriceStr);
             double impPrice = importPriceStr.isEmpty() ? 0 : Double.parseDouble(importPriceStr);
             int stock = stockStr.isEmpty() ? 0 : Integer.parseInt(stockStr);
 
-            Product newProduct = new Product(name, catId, sellPrice, impPrice, stock, unit);
+            Product newProduct = new Product(name, catId, sellPrice, impPrice, stock, unit, imageResId);
             Result<Boolean> result = repository.addProduct(newProduct);
             addResult.setValue(result);
 
