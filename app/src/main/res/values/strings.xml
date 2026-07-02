@@ -14,8 +14,12 @@
     <string name="application_name">RetailMS</string>
     <string name="application_sub_title">Quản lý bán hàng dễ dàng</string>
     <string name="loading_str">Loading...</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="select_image_src">Chọn ảnh sản phẩm</string>
     <string name="button_login_txt">ĐĂNG NHẬP</string>
+    <string name="product_price_and_stock">Giá bán: %,.0f đ | Kho: %2$d %3$s</string>
+    <string name="product_price_format">%,.0fđ</string>
+    <string name="default_category">Nước giải khát</string>
+    <string name="status_available">Còn hàng</string>
+    <string name="status_empty">Còn hàng</string>
 </resources>

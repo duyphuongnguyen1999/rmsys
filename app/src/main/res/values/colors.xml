@@ -1,9 +1,9 @@
 <resources>
-<!--    Common  -->
+    <!--    Common  -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-<!--    Primary -->
+    <!--    Primary -->
     <!-- Emerald Green
             - toolbar
             - main button
@@ -24,22 +24,30 @@
     -->
     <color name="light_green">#65D17B</color>
 
-<!--    Background  -->
+    <!--    Background  -->
     <color name="background">#F5F7F5</color>
     <color name="surface_white">#FFFFFF</color>
     <color name="background_upload_image">#FFFFFF</color>
 
-<!--    Border  -->
+    <!--    Border  -->
     <color name="border_gray">#D8D8D8</color>
 
-<!--    Text  -->
+    <!--    Text  -->
     <color name="text_primary">#1C1C1C</color>
     <color name="text_secondary">#757575</color>
     <color name="text_hint">#999999</color>
 
-<!--    Accent  -->
+    <!--    Accent  -->
     <color name="success_green">#28C76F</color>
     <color name="warning_orange">#FF9F43</color>
     <color name="error_red">#EA5455</color>
+
+    <!-- Màu cho trạng thái còn hàng -->
+    <color name="status_available_text">#2E7D32</color>
+    <color name="status_available_bg">#E8F5E9</color>
+
+    <!-- Màu cho trạng thái Hết Hàng -->
+    <color name="status_empty_text">#C62828</color>
+    <color name="status_empty_bg">#FFEBEE</color>
 
 </resources>
