@@ -24,6 +24,7 @@
             android:id="@+id/imgProduct"
             android:layout_width="64dp"
             android:layout_height="64dp"
+            android:contentDescription="@string/default_image_view_content_description"
             android:scaleType="centerInside"
             android:src="@drawable/sample_product" />
 
@@ -39,7 +40,7 @@
                 android:id="@+id/tvProductName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Coca Cola 330ml"
+                android:text="@string/default_product_name"
                 android:textColor="#333333"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -49,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="Nước giải khát"
+                android:text="@string/default_category"
                 android:textColor="#888888"
                 android:textSize="14sp" />
 
@@ -58,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="12,000đ"
+                android:text="@string/default_price"
                 android:textColor="#2E7D32"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -72,7 +73,7 @@
             android:background="@android:color/transparent"
             android:paddingHorizontal="10dp"
             android:paddingVertical="4dp"
-            android:text="Còn hàng"
+            android:text="@string/status_available"
             android:textSize="12sp"
             android:textStyle="bold"
             android:paddingStart="8dp"
