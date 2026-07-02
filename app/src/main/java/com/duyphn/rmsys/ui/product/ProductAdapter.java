@@ -64,10 +64,7 @@ public class ProductAdapter extends ListAdapter<Product, ProductAdapter.ProductV
             holder.tvStatus.setBackgroundResource(R.drawable.bg_status_empty);
         }
 
-        int imageResId = context.getResources().getIdentifier(
-                product.getId(),
-                "drawable",
-                context.getPackageName());
+        int imageResId = product.getImageResId();
         if (imageResId != 0) {
             holder.imgProduct.setImageResource(imageResId);
         } else {
