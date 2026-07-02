@@ -23,7 +23,7 @@ public class ProductViewModel extends ViewModel {
     public LiveData<Result<List<Product>>> getListResult() { return listResult;}
     public LiveData<Result<Boolean>> getAddResult() { return addResult; }
 
-    public void loadProduct() {
+    public void loadProducts() {
         listResult.setValue(repository.getProducts());
     }
 
