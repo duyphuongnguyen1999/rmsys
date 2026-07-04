@@ -30,7 +30,7 @@ public class ProductViewModel extends ViewModel {
     @SuppressWarnings("unchecked")
     public void addProduct(
             String name, String catId, String sellingPriceStr, String importPriceStr,
-            String stockStr, String unit, int imageResId) {
+            String stockStr, String unit, int imageResId, String description) {
         // Logic Validate dữ liệu thô đầu vào
         if (name == null || name.trim().isEmpty()) {
             addResult.setValue(new Result.Error(new Exception("Tên sản phẩm không được để trống")));
@@ -46,7 +46,7 @@ public class ProductViewModel extends ViewModel {
             double impPrice = importPriceStr.isEmpty() ? 0 : Double.parseDouble(importPriceStr);
             int stock = stockStr.isEmpty() ? 0 : Integer.parseInt(stockStr);
 
-            Product newProduct = new Product(name, catId, sellPrice, impPrice, stock, unit, imageResId);
+            Product newProduct = new Product(name, catId, sellPrice, impPrice, stock, unit, imageResId, description);
             Result<Boolean> result = repository.addProduct(newProduct);
             addResult.setValue(result);
 

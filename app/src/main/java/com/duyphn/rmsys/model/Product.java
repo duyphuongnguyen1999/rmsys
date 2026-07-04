@@ -12,13 +12,13 @@ public class Product implements Serializable {
     private double importPrice;
     private int stock;
     private String unit;
-
     private int imageResId;
+    private String description;
 
     public Product() {
     }
 
-    public Product(String id, String name, String categoryId, double sellingPrice, double importPrice, int stock, String unit, int imageResId) {
+    public Product(String id, String name, String categoryId, double sellingPrice, double importPrice, int stock, String unit, int imageResId, String description) {
         this.id = id;
         this.name = name;
         this.categoryId = categoryId;
@@ -27,10 +27,12 @@ public class Product implements Serializable {
         this.stock = stock;
         this.unit = unit;
         this.imageResId = imageResId;
+        this.description = description;
     }
 
     // Auto generate id constructor
-    public Product(String name, String categoryId, double sellingPrice, double importPrice, int stock, String unit, int imageResId) {
+    public Product(String name, String categoryId, double sellingPrice, double importPrice, int stock, String unit, int imageResId, String description) {
+        this.description = description;
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.categoryId = categoryId;
@@ -65,4 +67,12 @@ public class Product implements Serializable {
     public int getImageResId() { return imageResId; }
 
     public void setImageResId(int imageResId) { this.imageResId = imageResId; }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

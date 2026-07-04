@@ -18,7 +18,10 @@ public class ProductDataSource {
                 10000,
                 50,
                 "Hộp",
-                R.drawable.sample_product));
+                R.drawable.sample_product,
+                "Description")
+        );
+
         mockList.add(new Product(
                 "Coca Cola 330ml",
                 "cat1",
@@ -26,7 +29,9 @@ public class ProductDataSource {
                 10000,
                 50,
                 "Lon",
-                R.drawable.sample_product));
+                R.drawable.sample_product,
+                "Description")
+        );
         return mockList;
     }
 
