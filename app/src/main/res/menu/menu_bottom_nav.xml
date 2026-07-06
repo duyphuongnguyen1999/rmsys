@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Trang chủ" />
+
+    <item
+        android:id="@+id/productFragment"
+        android:icon="@drawable/ic_product"
+        android:title="Sản phẩm" />
+
+    <item
+        android:id="@+id/customerFragment"
+        android:icon="@drawable/ic_customer"
+        android:title="Khách hàng" />
+
+    <item
+        android:id="@+id/reportFragment"
+        android:icon="@drawable/ic_report"
+        android:title="Báo cáo" />
+
+    <item
+        android:id="@+id/settingFragment"
+        android:icon="@drawable/ic_setting"
+        android:title="Cài đặt" />
+
+</menu>
