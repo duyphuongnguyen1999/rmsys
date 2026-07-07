@@ -48,4 +48,8 @@
     <string name="title_nav_customer">Khách hàng</string>
     <string name="title_nav_report">Báo cáo</string>
     <string name="title_nav_setting">Cài đặt</string>
+    <string name="title_icon_notifications">Thông báo</string>
+    <string name="default_system_greeting">Xin chào, Admin</string>
+    <string name="default_sub_system_greeting">Chúc bạn một ngày làm việc hiệu quả!</string>
+    <string name="desc_ic_user">TODO</string>
 </resources>
