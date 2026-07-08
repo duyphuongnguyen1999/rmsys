@@ -373,7 +373,7 @@
                             android:layout_centerInParent="true"
                             app:cardCornerRadius="@dimen/radius_sm"
                             app:cardElevation="1dp"
-                            app:cardBackgroundColor="@color/transparent"
+                            app:cardBackgroundColor="@android:color/transparent"
                             app:strokeWidth="0dp">
 
                             <Spinner
