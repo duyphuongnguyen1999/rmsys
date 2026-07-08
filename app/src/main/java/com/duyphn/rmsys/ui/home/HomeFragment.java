@@ -1,15 +1,6 @@
 package com.duyphn.rmsys.ui.home;
 
-import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.core.view.GravityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.NavHostController;
-import androidx.navigation.fragment.NavHostFragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,31 +9,46 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+
 import com.duyphn.rmsys.R;
 import com.duyphn.rmsys.databinding.FragmentHomeBinding;
-import com.duyphn.rmsys.ui.product.ProductListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeFragment extends Fragment {
+
     private FragmentHomeBinding binding;
     private boolean isNotificationEnabled = true;
 
-    public HomeFragment() {
-        // Required empty public constructor
+    private BottomNavigationView bottomNavigationView;
+
+    public HomeFragment() { }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        bottomNavigationView = requireActivity().findViewById(R.id.bottomNav);
+        setupTimeFilterSpinner();
+        setupCardStatisticsClickListeners();
+        setupToolbarAndDrawerActions();
 
-        // Load spinner items
+    }
+
+    private void setupTimeFilterSpinner() {
         Spinner spinner = binding.spTimeFilter;
-
         String[] timeOptions = { "Hôm nay", "7 ngày qua", "Tháng này", "Năm nay" };
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 requireContext(),
                 R.layout.item_spinner_text,
                 timeOptions
@@ -55,24 +61,22 @@ public class HomeFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // TODO: Implement revenue chart filtering logic
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+    }
 
+    private void setupCardStatisticsClickListeners() {
+        binding.cvStatProduct.setOnClickListener(v -> {
+            if (bottomNavigationView != null) {
+                bottomNavigationView.setSelectedItemId(R.id.productFragment);
             }
         });
 
-        binding.cvStatProduct.setOnClickListener(v -> {
-//            NavController navController = NavHostFragment.findNavController(this);
-//            navController.navigate(R.id.productFragment);
-            // Find BottomNavigationView
-            BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottomNav);
-            // Navigate to productFragment
-            bottomNavigationView.setSelectedItemId(R.id.productFragment);
-        });
-
         binding.cvStatCustomer.setOnClickListener(v -> {
-            // TODO: Implement Customer's resources
+            if (bottomNavigationView != null) {
+                bottomNavigationView.setSelectedItemId(R.id.customerFragment);
+            }
         });
 
         binding.cvStatCategory.setOnClickListener(v -> {
@@ -86,23 +90,21 @@ public class HomeFragment extends Fragment {
         binding.cvUserAvatar.setOnClickListener(v -> {
             // TODO: Implement User's resources
         });
+    }
 
+    private void setupToolbarAndDrawerActions() {
         binding.toolbarHome.setOnMenuItemClickListener(item -> {
             int itemId = item.getItemId();
-
             if (itemId == R.id.action_notifications) {
-                // Toggle Notification state
                 isNotificationEnabled = !isNotificationEnabled;
-
                 if (isNotificationEnabled) {
                     item.setIcon(R.drawable.ic_notifications);
                     Toast.makeText(requireContext(), "Đã bật thông báo", Toast.LENGTH_SHORT).show();
-                    return true;
                 } else {
                     item.setIcon(R.drawable.ic_notifications_off);
                     Toast.makeText(requireContext(), "Đã tắt thông báo", Toast.LENGTH_SHORT).show();
-                    return true;
                 }
+                return true;
             }
             return false;
         });
@@ -113,26 +115,16 @@ public class HomeFragment extends Fragment {
 
         binding.navigationView.setNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
-
             if (itemId == R.id.nav_profile) {
                 Toast.makeText(requireContext(), "Mở trang Hồ sơ", Toast.LENGTH_SHORT).show();
-                // TODO: Implement Profile Activity and resources
             } else if (itemId == R.id.nav_history) {
                 Toast.makeText(requireContext(), "Mở trang Lịch sử", Toast.LENGTH_SHORT).show();
-                // TODO: Implement History Activity and resources
             } else if (itemId == R.id.nav_logout) {
                 Toast.makeText(requireContext(), "Thực hiện Đăng xuất", Toast.LENGTH_SHORT).show();
-                // TODO: Implement Logout Activity and resources
             }
-
             binding.drawerLayout.closeDrawer(GravityCompat.START);
-
             return true;
         });
-
-
-
-        return binding.getRoot();
     }
 
     @Override
