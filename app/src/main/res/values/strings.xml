@@ -52,4 +52,7 @@
     <string name="default_system_greeting">Xin chào, Admin</string>
     <string name="default_sub_system_greeting">Chúc bạn một ngày làm việc hiệu quả!</string>
     <string name="desc_ic_user">TODO</string>
+    <string name="title_nav_profile">Thông tin tài khoản</string>
+    <string name="title_nav_history">Lịch sử hoạt động</string>
+    <string name="title_nav_logout">Đăng xuất</string>
 </resources>
