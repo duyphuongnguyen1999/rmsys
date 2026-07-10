@@ -41,7 +41,7 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
 
     private DatabaseHelper(@Nullable Context context) {
         // Create database
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context != null ? context.getApplicationContext() : null, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     // Thread safe singleton pattern
@@ -75,8 +75,16 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onConfigure(SQLiteDatabase db) {
+        super.onConfigure(db);
+        db.setForeignKeyConstraintsEnabled(true);
+    }
 
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PRODUCT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CATEGORY);
+        onCreate(db);
     }
 
     private static void createProductTable(SQLiteDatabase db) {
