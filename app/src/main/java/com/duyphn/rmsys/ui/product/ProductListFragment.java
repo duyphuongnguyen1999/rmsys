@@ -110,7 +110,7 @@ public class ProductListFragment extends Fragment {
         binding.recyclerProducts.setAdapter(adapter);
 
         // 2. Khởi tạo cây phụ thuộc dữ liệu (Dependency Injection thủ công theo Clean Architecture)
-        ProductDataSource dataSource = new ProductDataSource();
+        ProductDataSource dataSource = new ProductDataSource(requireContext());
         ProductRepository repository = ProductRepository.getInstance(dataSource);
         ProductViewModelFactory factory = new ProductViewModelFactory(repository);
 

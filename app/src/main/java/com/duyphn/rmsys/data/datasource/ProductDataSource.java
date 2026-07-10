@@ -1,5 +1,7 @@
 package com.duyphn.rmsys.data.datasource;
 
+import android.content.Context;
+
 import com.duyphn.rmsys.R;
 import com.duyphn.rmsys.model.Product;
 
@@ -7,6 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDataSource {
+    private final DatabaseHelper dbHelper;
+
+    public ProductDataSource(Context context) {
+        this.dbHelper = DatabaseHelper.getInstance(context);
+    }
 
     public List<Product> getProducts() throws Exception {
         // TODO: Viết code đọc SQLite hoặc gọi API thực tế ở đây
