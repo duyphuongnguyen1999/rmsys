@@ -10,33 +10,33 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
 
     private static volatile DatabaseHelper instance;
 
-    public static final String DATABASE_NAME = "rmsys_store.db";
-    private static final int DATABASE_VERSION = 1;
+    static final String DATABASE_NAME = "rmsys_store.db";
+    static final int DATABASE_VERSION = 1;
 
     // Product table
-    private static final String TABLE_PRODUCT = "product";
-    private static final String COL_PROD_ID = "id";
-    private static final String COL_PROD_NAME = "name";
-    private static final String COL_PROD_CAT_ID = "category_id";
-    private static final String COL_PROD_SELL_PRICE = "selling_price";
-    private static final String COL_PROD_IMP_PRICE = "import_price";
-    private static final String COL_PROD_STOCK = "stock";
-    private static final String COL_PROD_UNIT = "unit";
-    private static final String COL_PROD_IMAGE_RES_ID = "image_res_id";
-    private static final String COL_PROD_DESCRIPTION = "description";
-    private static final String COL_PROD_UPDATED = "updated";
-    private static final String COL_PROD_UPDATED_BY = "updated_by";
-    private static final String COL_PROD_ACTIVE = "is_active";
+    static final String TABLE_PRODUCT = "product";
+    static final String COL_PROD_ID = "id";
+    static final String COL_PROD_NAME = "name";
+    static final String COL_PROD_CAT_ID = "category_id";
+    static final String COL_PROD_SELL_PRICE = "selling_price";
+    static final String COL_PROD_IMP_PRICE = "import_price";
+    static final String COL_PROD_STOCK = "stock";
+    static final String COL_PROD_UNIT = "unit";
+    static final String COL_PROD_IMAGE_RES_ID = "image_res_id";
+    static final String COL_PROD_DESCRIPTION = "description";
+    static final String COL_PROD_UPDATED = "updated";
+    static final String COL_PROD_UPDATED_BY = "updated_by";
+    static final String COL_PROD_ACTIVE = "is_active";
 
     // Category table
-    private static final String TABLE_CATEGORY = "category";
-    private static final String COL_CATEGORY_ID = "id";
-    private static final String COL_CATEGORY_NAME = "name";
-    private static final String COL_CATEGORY_DESCRIPTION = "description";
-    private static final String COL_CATEGORY_IMAGE_RES_ID = "image_res_id";
-    private static final String COL_CATEGORY_UPDATED = "updated";
-    private static final String COL_CATEGORY_UPDATED_BY = "updated_by";
-    private static final String COL_CATEGORY_ACTIVE = "is_active";
+    static final String TABLE_CATEGORY = "category";
+    static final String COL_CATEGORY_ID = "id";
+    static final String COL_CATEGORY_NAME = "name";
+    static final String COL_CATEGORY_DESCRIPTION = "description";
+    static final String COL_CATEGORY_IMAGE_RES_ID = "image_res_id";
+    static final String COL_CATEGORY_UPDATED = "updated";
+    static final String COL_CATEGORY_UPDATED_BY = "updated_by";
+    static final String COL_CATEGORY_ACTIVE = "is_active";
 
 
     private DatabaseHelper(@Nullable Context context) {
