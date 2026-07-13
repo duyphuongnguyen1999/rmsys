@@ -55,4 +55,7 @@
     <string name="title_nav_profile">Thông tin tài khoản</string>
     <string name="title_nav_history">Lịch sử hoạt động</string>
     <string name="title_nav_logout">Đăng xuất</string>
+    <string name="label_provider">Nhà cung cấp</string>
+    <string name="default_provider">Provider A</string>
+    <string name="title_action_edit">Sửa</string>
 </resources>
