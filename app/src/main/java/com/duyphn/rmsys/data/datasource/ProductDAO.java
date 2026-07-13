@@ -167,7 +167,7 @@ public class ProductDAO {
                         DatabaseHelper.COL_PROD_IMAGE_RES_ID + ", " +
                         DatabaseHelper.COL_PROD_DESCRIPTION + " " +
                 "FROM " + DatabaseHelper.TABLE_PRODUCT + " " +
-                "WHERE " + DatabaseHelper.COL_PROD_ID + "= '" + name + "'";
+                "WHERE " + DatabaseHelper.COL_PROD_NAME + "= '" + name + "'";
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -206,7 +206,7 @@ public class ProductDAO {
                         DatabaseHelper.COL_PROD_IMAGE_RES_ID + ", " +
                         DatabaseHelper.COL_PROD_DESCRIPTION + " " +
                 "FROM " + DatabaseHelper.TABLE_PRODUCT + " " +
-                "WHERE " + DatabaseHelper.COL_PROD_ID + "= '" + cat_id + "'";
+                "WHERE " + DatabaseHelper.COL_PROD_CAT_ID + "= '" + cat_id + "'";
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -230,8 +230,5 @@ public class ProductDAO {
         db.close();
         return productList;
     }
-
-
-
 
 }
