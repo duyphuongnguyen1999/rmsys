@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDataSource {
-    private final DatabaseHelper dbHelper;
 
-    public ProductDataSource(Context context) {
-        this.dbHelper = DatabaseHelper.getInstance(context);
+    private final ProductDAO productDAO;
+    public ProductDataSource(DatabaseHelper dbHelper) {
+        this.productDAO = new ProductDAO(dbHelper);
     }
 
-    public List<Product> getProducts() throws Exception {
+    public List<Product> getMockProducts() throws Exception {
         // TODO: Viết code đọc SQLite hoặc gọi API thực tế ở đây
         List<Product> mockList = new ArrayList<>();
         mockList.add(new Product(
@@ -42,8 +42,46 @@ public class ProductDataSource {
         return mockList;
     }
 
+    public Product getProductById(String id) throws Exception {
+        try {
+            return productDAO.findById(id);
+        } catch (Exception e) {
+            throw new Exception("Lỗi khi lấy sản phẩm từ database: " + e.getMessage(), e);
+        }
+    }
+
+    public List<Product> getProductByName(String name) throws Exception {
+        try {
+            return productDAO.findByName(name);
+        } catch (Exception e) {
+            throw new Exception("Lỗi khi lấy danh sách sản phẩm từ database: " + e.getMessage(), e);
+        }
+    }
+
+    public List<Product> getProductByCategoryId(String cat_id) throws Exception {
+        try {
+            return productDAO.findByCategoryId(cat_id);
+        } catch (Exception e) {
+            throw new Exception("Lỗi khi lấy danh sách sản phẩm từ database: " + e.getMessage(), e);
+        }
+    }
+
+    public List<Product> getProducts() throws Exception {
+        try {
+            return productDAO.findByActiveState(true);
+        } catch (Exception e) {
+            throw new Exception("Lỗi khi lấy danh sách sản phẩm từ database: " + e.getMessage(), e);
+        }
+    }
+
     public boolean addProduct(Product product) throws Exception {
-        // TODO: Viết code INSERT vào SQLite hoặc POST lên API thực tế
-        return true;
+        try {
+            if (product == null) {
+                throw new IllegalArgumentException("Dữ liệu sản phẩm không được rỗng");
+            }
+            return productDAO.insert(product);
+        } catch (Exception e) {
+            throw new Exception("Lỗi khi thêm sản phẩm vào Database: " + e.getMessage(), e);
+        }
     }
 }
