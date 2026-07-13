@@ -1,5 +1,6 @@
 package com.duyphn.rmsys.ui.product;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.duyphn.rmsys.data.datasource.DatabaseHelper;
 import com.duyphn.rmsys.data.datasource.ProductDataSource;
 import com.duyphn.rmsys.data.repository.ProductRepository;
 import com.duyphn.rmsys.databinding.FragmentProductListBinding;
@@ -110,7 +112,8 @@ public class ProductListFragment extends Fragment {
         binding.recyclerProducts.setAdapter(adapter);
 
         // 2. Khởi tạo cây phụ thuộc dữ liệu (Dependency Injection thủ công theo Clean Architecture)
-        ProductDataSource dataSource = new ProductDataSource(requireContext());
+        DatabaseHelper dbHelper = DatabaseHelper.getInstance(requireContext());
+        ProductDataSource dataSource = new ProductDataSource(dbHelper);
         ProductRepository repository = ProductRepository.getInstance(dataSource);
         ProductViewModelFactory factory = new ProductViewModelFactory(repository);
 
